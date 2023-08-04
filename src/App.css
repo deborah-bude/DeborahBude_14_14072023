@@ -1,38 +1,214 @@
-.App {
+/*
+ * 0 - Normalize
+ * 1 - Typographie
+ * 2 - Header
+ * 3 - Footer
+ * 4 - Corps de page
+ * 5 - Formulaire
+ */
+
+/**** 0 - Normalize ****/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+}
+
+li,
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #755BB4;
+}
+
+fieldset {
+  border-color: #755BB4;
+}
+
+/**** 1 - Typographie ****/
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #755BB4;
+  text-transform: uppercase;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p,
+li,
+ul,
+ol,
+a,
+label,
+input,
+legend {
+  font-size: 1.6rem;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+/**** 2 - Header ****/
+.entete_page {
+  background: #755BB4;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.entete_page__row {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: auto;
+  padding: 0 20px;
+}
+
+.entete_page__row img {
+  width: 20%;
+  max-width: 200px;
+}
+
+.entete_page__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entete_page__nav-item {
   color: white;
+  margin-right: 20px;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+.entete_page__nav-item:last-child {
+  margin-right: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.entete_page__nav-item:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.entete_page__icon_list {
+  width: 23%;
+  background: white;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entete_page__icon {
+  font-size: 2rem;
+}
+
+.fa-message {
+  position: relative;
+}
+
+.fa-message:after {
+  content: "";
+  background: red;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.entete_page__icon {
+  color: #755BB4;
+}
+
+.user_profile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user_profile img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user_profile p {
+  color : #755BB4;
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.user_profile i {
+  color : #755BB4;
+  font-weight: 600;
+}
+
+/**** 3 - Footer ****/
+
+/**** 4 - Corps de page ****/
+.corps_page {
+  margin: auto;
+  width: 80%;
+  max-width: 1440px;
+}
+
+/**** 5 - Formulaire ****/
+label, legend {
+  color : #755BB4;
+  text-transform: uppercase;
+  font-family: 'Reem Kufi', sans-serif;
+  font-weight: 600;
+}
+
+label {
+  width: 150px;
+  display: inline-block;
+}
+
+input, select {
+  width: calc(100% - 180px);
+  padding: 10px;
+}
+
+.form_input-container {
+  padding: 15px 10px;
+}
+
+.form_input-container.half-input {
+  width: calc(50% - 20px);
+  display: inline-block;
 }
