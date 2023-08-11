@@ -1,15 +1,17 @@
-import {configureStore, createSelector, createSlice} from "@reduxjs/toolkit";
+import {configureStore, createSlice} from "@reduxjs/toolkit";
+
+const allEmployeesSave = JSON.parse(localStorage.getItem("allEmployeesSave"))
 
 const employeeSlice = createSlice(({
     name: 'employee',
-    initialState: null,
+    initialState: allEmployeesSave ? allEmployeesSave : null ,
     reducers: {
         addEmployee: (state, action) => {
             if (state === null) {
-                localStorage.setItem("allEmployees", [action.payload]);
+                localStorage.setItem("allEmployeesSave", JSON.stringify([action.payload]));
                 return [action.payload]
             }
-            localStorage.setItem("allEmployees", [...state, action.payload]);
+            localStorage.setItem("allEmployeesSave", JSON.stringify([...state, action.payload]));
             return [...state, action.payload]
         }
     },
