@@ -5,6 +5,8 @@ import 'react-calendar/dist/Calendar.css';
 import {useDispatch, useSelector} from "react-redux";
 import {addEmployee} from "../redux";
 import {Modal} from "react-responsive-modal";
+import 'react-responsive-modal/styles.css';
+
 export function Home() {
     const dispatch = useDispatch()
 
@@ -22,7 +24,7 @@ export function Home() {
         const form = event.target;
         const formData = new FormData(form);
         const formJson = Object.fromEntries(formData.entries());
-        console.log(formJson);
+
         const newEmployee =
                 {
                     id: allEmployees ? allEmployees.length : 0,

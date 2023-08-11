@@ -1,6 +1,5 @@
 import React from "react";
-import DataTable from "react-data-table-component";
-import DataTableExtensions from "react-data-table-component-extensions";
+import MUIDataTable from "mui-datatables";
 import "react-data-table-component-extensions/dist/index.css";
 
 import {useSelector} from "react-redux";
@@ -8,79 +7,94 @@ import {useSelector} from "react-redux";
 export function EmployeesList() {
     const allEmployees = useSelector(state => state.allEmployees)
 
-    /*const [filterText, setFilterText] = React.useState('');
-    const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
-
-    const subHeaderComponentMemo = React.useMemo(() => {
-        const handleClear = () => {
-            if (filterText) {
-                setResetPaginationToggle(!resetPaginationToggle);
-                setFilterText('');
-            }
-        };
-
-        return (
-            <GridToolbarQuickFilter onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
-        );
-    }, [filterText, resetPaginationToggle]);*/
-
-
-
     const columns = [
         {
-            name: 'First Name',
-            selector: row => row.firstname,
-            sortable: true,
+            label: 'First Name',
+            name: "firstname",
+            options: {
+                filter: true,
+                sort: true,
+            }
+
         },
         {
-            name: 'Last Name',
-            selector: row => row.lastname,
-            sortable: true,
+            label: 'Last Name',
+            name: "lastname",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'Start Date',
-            selector: row => row.startdate,
-            sortable: true,
+            label: 'Start Date',
+            name: "startdate",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'Department',
-            selector: row => row.department,
+            label: 'Department',
+            name: "department",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'Date of Birth',
-            selector: row => row.dateofbirth,
+            label: 'Date of Birth',
+            name: "dateofbirth",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'Street',
-            selector: row => row.street,
+            label: 'Street',
+            name: "street",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'City',
-            selector: row => row.city,
+            label: 'City',
+            name: "city",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'State',
-            selector: row => row.state,
+            label: 'State',
+            name: "state",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
         {
-            name: 'Zip Code',
-            selector: row => row.zipcode,
+            label: 'Zip Code',
+            name: "zipcode",
+            options: {
+                filter: true,
+                sort: true,
+            }
         },
     ];
+
+    const options = {
+        filterType: 'checkbox',
+    };
 
     return (
         <div id="employee-div" className="container">
             <h1>Current Employees</h1>
-            <DataTableExtensions {...allEmployees}>
-                <DataTable
+                <MUIDataTable
+                    data={allEmployees}
                     columns={columns}
-                    data={allEmployees || []}
-                    pagination
-                    defaultSortField="id"
-                    dense
-                    highlightOnHover
+                    options={options}
                 />
-            </DataTableExtensions>
         </div>
     )
 }
