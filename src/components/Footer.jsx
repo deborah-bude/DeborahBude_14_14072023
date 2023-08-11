@@ -2,6 +2,6 @@ import React from "react";
 
 export function Footer() {
     return (
-        <div><p>Footer</p></div>
+        <div className="pied-page"><p>©2023 | HRNet</p></div>
     )
 }

@@ -44,29 +44,23 @@ fieldset {
 }
 
 /**** 1 - Typographie ****/
+* {
+  font-size: 1.6rem;
+  margin: 0;
+}
+
 h1 {
   font-size: 4rem;
   font-weight: 700;
   color: #755BB4;
   text-transform: uppercase;
   text-align: center;
+  margin: 30px 0;
 }
 
 h2 {
   font-size: 1.6rem;
-  margin-bottom: 30px;
-}
-
-p,
-li,
-ul,
-ol,
-a,
-label,
-input,
-legend {
-  font-size: 1.6rem;
-  margin: 0;
+  margin: 30px 0;
 }
 
 
@@ -178,6 +172,13 @@ legend {
 }
 
 /**** 3 - Footer ****/
+.pied-page {
+  background: #755BB4;
+  color: white;
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+}
 
 /**** 4 - Corps de page ****/
 .corps_page {
