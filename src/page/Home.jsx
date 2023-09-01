@@ -7,6 +7,7 @@ import {addEmployee} from "../redux";
 import {Modal} from "react-responsive-modal";
 import 'react-responsive-modal/styles.css';
 import { Dropdown } from "react-library-dropdown"
+//import "react-library-dropdown/dist/style.css"
 
 export function Home() {
     const dispatch = useDispatch()
@@ -601,8 +602,8 @@ export function Home() {
                         <input id="city" type="text" name="city" />
                     </div>
                     <div className="form_input-container half-input">
-                        <Dropdown title="State" options={optionGroup}></Dropdown>
-                        <Dropdown title="State" options={options}></Dropdown>
+                        <Dropdown title="State" options={optionGroup} />
+                        <Dropdown title="State" options={options} />
                     </div>
                     <div className="form_input-container half-input">
                         <label htmlFor="zip-code">Zip Code</label>
