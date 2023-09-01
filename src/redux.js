@@ -4,7 +4,7 @@ const allEmployeesSave = JSON.parse(localStorage.getItem("allEmployeesSave"))
 
 const employeeSlice = createSlice(({
     name: 'employee',
-    initialState: allEmployeesSave ? allEmployeesSave : null ,
+    initialState: allEmployeesSave ? allEmployeesSave : null,
     reducers: {
         addEmployee: (state, action) => {
             if (state === null) {

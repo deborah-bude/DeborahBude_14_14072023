@@ -1,7 +1,5 @@
 import React from "react";
 import MUIDataTable from "mui-datatables";
-import "react-data-table-component-extensions/dist/index.css";
-
 import {useSelector} from "react-redux";
 
 export function EmployeesList() {
