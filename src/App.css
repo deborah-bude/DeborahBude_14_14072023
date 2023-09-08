@@ -68,7 +68,7 @@ h2 {
 .entete_page {
   background: #755BB4;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .entete_page__row {
@@ -260,10 +260,6 @@ input:focus, .react-date-picker--open .react-date-picker__inputGroup {
   .entete_page__row img {
     width: 115px;
     margin: auto;
-  }
-
-  .entete_page {
-    justify-content: space-around;
   }
 
   .entete_page__icon_list {
