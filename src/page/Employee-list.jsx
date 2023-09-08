@@ -2,7 +2,7 @@ import React from "react";
 import MUIDataTable from "mui-datatables";
 import {useSelector} from "react-redux";
 
-export function EmployeesList() {
+export default function EmployeesList() {
     const allEmployees = useSelector(state => state.allEmployees)
 
     const columns = [
@@ -83,16 +83,17 @@ export function EmployeesList() {
 
     const options = {
         filterType: 'checkbox',
+        responsive: 'vertical'
     };
 
     return (
         <div id="employee-div" className="container">
             <h1>Current Employees</h1>
-                <MUIDataTable
-                    data={allEmployees}
-                    columns={columns}
-                    options={options}
-                />
+            <MUIDataTable
+                data={allEmployees===null ? [] : allEmployees}
+                columns={columns}
+                options={options}
+            />
         </div>
     )
 }

@@ -8,9 +8,9 @@
  */
 
 /**** 0 - Normalize ****/
-html {
+/*html {
   font-size: 62.5%;
-}
+}*/
 
 body {
   margin: 0;
@@ -45,12 +45,12 @@ fieldset {
 
 /**** 1 - Typographie ****/
 * {
-  font-size: 1.6rem;
+  font-size: 1rem;
   margin: 0;
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #755BB4;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6rem;
+  font-size: 1rem;
   margin: 30px 0;
 }
 
@@ -68,7 +68,6 @@ h2 {
 .entete_page {
   background: #755BB4;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -78,7 +77,6 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-left: auto;
   padding: 0 20px;
 }
 
@@ -97,7 +95,7 @@ h2 {
 .entete_page__nav-item {
   color: white;
   margin-right: 20px;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
   font-family: 'Reem Kufi', sans-serif;
   font-weight: 700;
@@ -123,7 +121,7 @@ h2 {
 }
 
 .entete_page__icon {
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 .fa-message {
@@ -163,7 +161,7 @@ h2 {
   color : #755BB4;
   font-family: 'Reem Kufi', sans-serif;
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .user_profile i {
@@ -188,6 +186,13 @@ h2 {
 }
 
 /**** 5 - Formulaire ****/
+form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
 label, legend {
   color : #755BB4;
   text-transform: uppercase;
@@ -196,20 +201,76 @@ label, legend {
 }
 
 label {
-  width: 150px;
-  display: inline-block;
-}
-
-input, select {
-  width: calc(100% - 180px);
-  padding: 10px;
+  padding: 15px 0;
 }
 
 .form_input-container {
-  padding: 15px 10px;
+  padding: 15px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.address-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .form_input-container.half-input {
   width: calc(50% - 20px);
-  display: inline-block;
+}
+
+input {
+  padding: 15px;
+  line-height: 1.4;
+  border: 1px solid #e5e5e5;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  transition: 0.35s ease-in-out;
+}
+
+input::placeholder {
+  color: #baa5ec;
+}
+
+input:focus::placeholder {
+  color: white;
+}
+
+.react-date-picker__inputGroup {
+  padding: 15px !important;
+  background-color: #f9f9f9;
+}
+
+.react-date-picker__wrapper {
+  border: 1px solid #e5e5e5 !important;
+}
+
+input:focus, .react-date-picker--open .react-date-picker__inputGroup {
+  outline: 0;
+  border-color: #755BB4;
+  background-color: #baa5ec;
+  color: #fff;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width:850px) {
+  .entete_page__row img {
+    width: 115px;
+    margin: auto;
+  }
+
+  .entete_page {
+    justify-content: space-around;
+  }
+
+  .entete_page__icon_list {
+    display: none;
+  }
+
+  .form_input-container.half-input {
+    width: 100%;
+  }
 }
